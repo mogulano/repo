@@ -3,8 +3,6 @@ on:
 
 jobs:
   job1:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     steps:      
       - uses: actions/checkout@v3
@@ -12,14 +10,12 @@ jobs:
       - run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          touch test.txt
+          echo "ran" >> test.txt
           git add test.txt
           git commit -m test
           git push
 
   job2:
-    permissions:
-      issues: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
