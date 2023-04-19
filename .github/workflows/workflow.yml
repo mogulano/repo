@@ -1,5 +1,5 @@
 on:
-  issue:
+  issues
 
 jobs:
   job1:
